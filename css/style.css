@@ -247,6 +247,42 @@ em{ color:var(--accent); font-style:italic; }
 .nav-search input::placeholder{
   color:var(--ink-dim);
 }
+.search-results{
+  position:absolute;
+  top:calc(100% + 10px);
+  left:0;
+  right:0;
+  background:rgba(15,20,25,0.97);
+  border:1px solid var(--line-strong);
+  border-radius:14px;
+  padding:6px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
+  backdrop-filter:blur(12px);
+  display:none;
+  z-index:1000;
+  max-height:60vh;
+  overflow-y:auto;
+}
+.search-results.open{ display:block; }
+.sr-item{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:10px 14px;
+  border-radius:10px;
+  color:var(--ink);
+  text-decoration:none;
+  transition:background var(--t-fast);
+}
+.sr-item:hover, .sr-item.active{ background:rgba(212,255,61,0.12); }
+.sr-title{ font-size:13.5px; font-weight:600; color:var(--ink); }
+.sr-desc{ font-size:11.5px; color:var(--ink-dim); }
+.sr-empty{
+  padding:14px;
+  font-size:13px;
+  color:var(--ink-dim);
+  text-align:center;
+}
 
 .nav-menu{
   display:flex;
@@ -654,6 +690,12 @@ em{ color:var(--accent); font-style:italic; }
   50%{ box-shadow:0 0 0 10px rgba(212,255,61,0); }
 }
 
+.booknow-cta{
+  display:flex;
+  justify-content:center;
+  margin-top:36px;
+}
+
 .annotation{
   position:absolute;
   z-index:3;
@@ -702,11 +744,42 @@ em{ color:var(--accent); font-style:italic; }
    FOOTER
    ========================================================= */
 .site-footer{
-  max-width:var(--container);
-  margin:30px auto 0;
-  padding:60px 24px 24px;
+  position:relative;
+  max-width:none;
+  margin:60px 0 0;
+  padding:90px 24px 24px;
   border-top:1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(15,30,45,0) 0%, rgba(12,26,40,0.55) 30%, rgba(8,20,32,0.92) 100%),
+    linear-gradient(180deg, #0a1a26 0%, #0d2030 45%, #081826 100%);
+  overflow:hidden;
+  isolation:isolate;
 }
+/* far mountain silhouette */
+.site-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 400' preserveAspectRatio='xMidYMax slice'><path d='M0,260 L120,180 L260,230 L380,150 L520,210 L660,130 L820,200 L960,140 L1120,205 L1260,150 L1420,220 L1560,160 L1720,215 L1860,170 L1920,200 L1920,400 L0,400 Z' fill='%23142a3c' opacity='0.55'/><path d='M0,310 L160,250 L320,290 L480,230 L640,280 L800,220 L960,275 L1120,225 L1280,285 L1440,235 L1600,280 L1760,240 L1920,275 L1920,400 L0,400 Z' fill='%230f2230' opacity='0.7'/></svg>");
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:cover;
+  z-index:-2;
+  pointer-events:none;
+}
+/* tree silhouette layer */
+.site-footer::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 400' preserveAspectRatio='xMidYMax slice'><g fill='%23050d15'><path d='M0,360 C30,355 50,330 60,320 C70,305 80,300 100,300 C110,280 130,275 140,290 C155,270 175,275 185,295 C200,290 215,305 220,320 C235,325 245,340 250,355 L250,400 L0,400 Z'/><path d='M260,355 C280,345 290,320 305,310 C315,295 330,295 340,305 C350,285 370,285 380,305 C395,295 410,310 415,325 C425,335 435,345 445,355 L445,400 L260,400 Z'/><path d='M455,358 C475,348 485,318 500,305 C515,290 530,295 540,310 C555,290 575,290 585,310 C600,295 615,315 620,330 C635,335 645,348 655,358 L655,400 L455,400 Z'/><path d='M665,355 C685,345 700,315 715,305 C730,295 745,295 755,305 C770,285 790,290 800,310 C815,300 830,315 835,330 C850,335 860,348 870,358 L870,400 L665,400 Z'/><path d='M880,358 C905,348 915,318 935,302 C950,290 965,295 975,310 C985,290 1005,290 1015,310 C1030,295 1050,310 1055,330 C1070,335 1080,348 1090,358 L1090,400 L880,400 Z'/><path d='M1100,355 C1120,345 1135,320 1150,305 C1165,290 1180,295 1190,310 C1205,290 1225,290 1235,310 C1250,295 1265,315 1270,330 C1285,335 1295,348 1305,358 L1305,400 L1100,400 Z'/><path d='M1315,358 C1340,348 1355,318 1370,305 C1385,290 1400,295 1410,310 C1425,290 1445,290 1455,310 C1470,295 1485,315 1490,330 C1505,335 1515,348 1525,358 L1525,400 L1315,400 Z'/><path d='M1535,355 C1560,345 1575,320 1590,305 C1605,290 1620,295 1630,310 C1645,290 1665,290 1675,310 C1690,295 1705,315 1710,330 C1725,335 1735,348 1745,358 L1745,400 L1535,400 Z'/><path d='M1755,358 C1780,348 1795,318 1815,302 C1830,290 1845,295 1855,310 C1870,295 1890,300 1900,318 C1915,328 1925,348 1920,358 L1920,400 L1755,400 Z'/><path d='M0,385 L40,378 L80,388 L130,378 L180,388 L230,378 L290,388 L350,378 L410,388 L470,378 L540,388 L610,378 L680,388 L750,378 L820,388 L890,378 L960,388 L1030,378 L1100,388 L1170,378 L1240,388 L1310,378 L1380,388 L1450,378 L1520,388 L1600,378 L1680,388 L1760,378 L1840,388 L1920,380 L1920,400 L0,400 Z'/></g></svg>");
+  background-repeat:no-repeat;
+  background-position:center bottom;
+  background-size:cover;
+  z-index:-1;
+  pointer-events:none;
+}
+.site-footer > *{ position:relative; max-width:var(--container); margin-left:auto; margin-right:auto; }
 .footer-grid{
   display:grid;
   grid-template-columns:1fr;

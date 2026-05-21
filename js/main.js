@@ -416,6 +416,124 @@
     });
   }
 
+  /* ---------- NAV SEARCH ---------- */
+  function initSearch() {
+    const wrap = document.querySelector('.nav-search');
+    if (!wrap) return;
+    const input = wrap.querySelector('input');
+    const icon = wrap.querySelector('svg');
+    if (!input) return;
+
+    const INDEX = [
+      { title: 'Home', desc: 'Roamingoo home', href: 'index.html', keywords: 'home main landing roamingoo' },
+      { title: 'Adventures', desc: 'Browse all destinations', href: 'index.html#adventure', keywords: 'adventures wonders destinations explore' },
+      { title: 'Book Now', desc: 'Reserve and pay for your trip', href: 'booking.html', keywords: 'book booking pay payment reserve checkout confirm' },
+      { title: 'Contact', desc: 'Get in touch with us', href: 'contact.html', keywords: 'contact email phone reach help support' },
+      { title: 'Tours', desc: 'Popular tour packages', href: 'tour.html', keywords: 'tour package itinerary trip' },
+      { title: 'Destinations', desc: 'All Roamingoo destinations', href: 'destination.html', keywords: 'destinations places india travel' },
+      { title: 'Uttarakhand', desc: 'Sacred peaks, Char Dham, Ganga', href: 'destination-uttarakhand.html', keywords: 'uttarakhand devbhumi rishikesh kedarnath badrinath gangotri yamunotri valley of flowers auli har ki dun trek char dham nanda devi' },
+      { title: 'Goa', desc: 'Beaches and sunsets', href: 'destination-goa.html', keywords: 'goa beach beaches arabian sea sunset palolem anjuna baga' },
+      { title: 'Banaras', desc: 'Ghats and the sacred Ganga', href: 'destination-banaras.html', keywords: 'banaras varanasi kashi ghats ganga aarti temple' },
+      { title: 'West Bengal', desc: 'Tea gardens and tigers', href: 'destination-west-bengal.html', keywords: 'west bengal kolkata darjeeling sundarbans tea tigers' },
+      { title: 'Sikkim', desc: 'Monasteries and Kangchenjunga', href: 'destination-sikkim.html', keywords: 'sikkim gangtok kangchenjunga tsomgo lake monastery' },
+      { title: 'About', desc: 'Our story', href: 'index.html#about', keywords: 'about story team who' },
+      { title: 'Blog', desc: 'Latest from the trail', href: 'index.html#blog', keywords: 'blog articles posts stories journal' }
+    ];
+
+    const list = document.createElement('div');
+    list.className = 'search-results';
+    list.setAttribute('role', 'listbox');
+    wrap.appendChild(list);
+
+    let current = [];
+    let active = -1;
+
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    function score(q, item) {
+      q = q.toLowerCase();
+      const title = item.title.toLowerCase();
+      const hay = (item.title + ' ' + item.keywords + ' ' + item.desc).toLowerCase();
+      if (title === q) return 5;
+      if (title.startsWith(q)) return 4;
+      if (title.includes(q)) return 3;
+      if ((' ' + hay).includes(' ' + q)) return 2;
+      if (hay.includes(q)) return 1;
+      return 0;
+    }
+
+    function updateActive() {
+      list.querySelectorAll('.sr-item').forEach((el, i) => el.classList.toggle('active', i === active));
+    }
+
+    function render(q) {
+      if (!q) {
+        list.classList.remove('open');
+        list.innerHTML = '';
+        current = [];
+        active = -1;
+        return;
+      }
+      current = INDEX
+        .map((item) => ({ item, s: score(q, item) }))
+        .filter((x) => x.s > 0)
+        .sort((a, b) => b.s - a.s)
+        .slice(0, 7)
+        .map((x) => x.item);
+
+      list.classList.add('open');
+      if (!current.length) {
+        list.innerHTML = '<div class="sr-empty">No matches for "' + esc(q) + '"</div>';
+        active = -1;
+        return;
+      }
+      list.innerHTML = current.map((item, i) =>
+        '<a class="sr-item" href="' + item.href + '" data-i="' + i + '">' +
+        '<span class="sr-title">' + esc(item.title) + '</span>' +
+        '<span class="sr-desc">' + esc(item.desc) + '</span>' +
+        '</a>'
+      ).join('');
+      active = 0;
+      updateActive();
+    }
+
+    input.addEventListener('input', () => render(input.value.trim()));
+    input.addEventListener('focus', () => { if (input.value.trim()) render(input.value.trim()); });
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (current.length) { active = (active + 1) % current.length; updateActive(); }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (current.length) { active = (active - 1 + current.length) % current.length; updateActive(); }
+      } else if (e.key === 'Enter') {
+        if (current.length && active >= 0) {
+          e.preventDefault();
+          window.location.href = current[active].href;
+        }
+      } else if (e.key === 'Escape') {
+        input.value = '';
+        render('');
+        input.blur();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) list.classList.remove('open');
+    });
+
+    if (icon) {
+      icon.style.cursor = 'pointer';
+      icon.addEventListener('click', () => {
+        if (current.length && active >= 0) {
+          window.location.href = current[active].href;
+        } else {
+          input.focus();
+        }
+      });
+    }
+  }
+
   /* ---------- INIT ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     initStickyNav();
@@ -432,5 +550,6 @@
     initWatchVideo();
     initEnquireForm();
     initBooking();
+    initSearch();
   });
 })();
