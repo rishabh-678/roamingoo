@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Complete your Roamingoo booking — secure payment for your trip." />
+  <title>Complete Booking — Roamingoo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-booking">
+
+  <!-- NAVBAR -->
+  <header class="site-header solid" id="siteHeader">
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html" class="logo" aria-label="Roamingoo home"><span class="logo-word">Roamingoo</span></a>
+      <div class="nav-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" placeholder="Search destinations, trips, guides…" aria-label="Search" />
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html#adventure" class="nav-link">Adventure</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="index.html#booknow" class="nav-link active">Book Now</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="#login" class="btn-login">Login</a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </header>
+
+  <!-- ============ BOOKING ============ -->
+  <main class="booking-page">
+
+    <header class="booking-top">
+      <a href="tour.html" class="tour-back">← Back to tour</a>
+      <h1>Complete your booking</h1>
+      <ol class="booking-steps">
+        <li class="step done"><span>1</span> Your Details</li>
+        <li class="step active"><span>2</span> Payment</li>
+        <li class="step"><span>3</span> Confirmation</li>
+      </ol>
+    </header>
+
+    <div class="booking-grid">
+
+      <!-- ===== Left: forms ===== -->
+      <form class="booking-forms" id="bookingForm" novalidate>
+
+        <!-- Traveller details -->
+        <section class="booking-card">
+          <header class="bc-head">
+            <span class="bc-num">01</span>
+            <h3>Traveller Details</h3>
+          </header>
+
+          <div class="bf-row">
+            <label class="field">
+              <span>Full Name</span>
+              <input type="text" name="name" required placeholder="Jane Doe" />
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" required placeholder="jane@example.com" />
+            </label>
+          </div>
+
+          <div class="bf-row">
+            <label class="field">
+              <span>Phone</span>
+              <input type="tel" name="phone" required placeholder="+91 99999 99999" />
+            </label>
+            <label class="field">
+              <span>Travellers</span>
+              <select name="travellers" required>
+                <option value="1">1 Traveller</option>
+                <option value="2" selected>2 Travellers</option>
+                <option value="3">3 Travellers</option>
+                <option value="4">4 Travellers</option>
+                <option value="5+">5 or more</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="bf-row">
+            <label class="field">
+              <span>Preferred Start Date</span>
+              <input type="date" name="date" required />
+            </label>
+            <label class="field">
+              <span>Pickup City</span>
+              <input type="text" name="city" placeholder="Delhi" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Special Requests (optional)</span>
+            <textarea name="notes" rows="3" placeholder="Dietary needs, anniversary plans, accessibility — anything we should know."></textarea>
+          </label>
+        </section>
+
+        <!-- Payment -->
+        <section class="booking-card">
+          <header class="bc-head">
+            <span class="bc-num">02</span>
+            <h3>Payment Method</h3>
+          </header>
+
+          <div class="pay-tabs" role="tablist">
+            <button type="button" class="pay-tab active" data-pay="card">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18"/></svg>
+              Card
+            </button>
+            <button type="button" class="pay-tab" data-pay="upi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 4l-4 16M15 4l-4 16M5 9h14M5 15h14"/></svg>
+              UPI
+            </button>
+            <button type="button" class="pay-tab" data-pay="netbanking">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V10M19 21V10M9 21V14M15 21V14M3 10l9-6 9 6"/></svg>
+              Net Banking
+            </button>
+          </div>
+
+          <!-- CARD panel -->
+          <div class="pay-panel active" data-panel="card">
+            <label class="field">
+              <span>Card Number</span>
+              <div class="card-input">
+                <input type="text" name="cardNumber" id="cardNumber" required inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456" autocomplete="cc-number" />
+                <span class="card-brand" id="cardBrand">CARD</span>
+              </div>
+            </label>
+
+            <div class="bf-row">
+              <label class="field">
+                <span>Expiry (MM / YY)</span>
+                <input type="text" name="expiry" id="cardExpiry" required inputmode="numeric" maxlength="7" placeholder="MM / YY" autocomplete="cc-exp" />
+              </label>
+              <label class="field">
+                <span>CVV</span>
+                <input type="password" name="cvv" required inputmode="numeric" maxlength="4" placeholder="•••" autocomplete="cc-csc" />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Name on Card</span>
+              <input type="text" name="cardName" required placeholder="JANE DOE" autocomplete="cc-name" />
+            </label>
+
+            <label class="checkbox save-card">
+              <input type="checkbox" />
+              <span>Save this card for future bookings</span>
+            </label>
+          </div>
+
+          <!-- UPI panel -->
+          <div class="pay-panel" data-panel="upi">
+            <label class="field">
+              <span>UPI ID</span>
+              <input type="text" name="upi" placeholder="yourname@upi" />
+            </label>
+            <p class="pay-help">You'll receive a payment request on your UPI app to approve.</p>
+          </div>
+
+          <!-- Netbanking panel -->
+          <div class="pay-panel" data-panel="netbanking">
+            <label class="field">
+              <span>Select Bank</span>
+              <select name="bank">
+                <option value="">Choose your bank…</option>
+                <option>HDFC Bank</option>
+                <option>ICICI Bank</option>
+                <option>State Bank of India</option>
+                <option>Axis Bank</option>
+                <option>Kotak Mahindra</option>
+                <option>Other</option>
+              </select>
+            </label>
+            <p class="pay-help">You'll be redirected to your bank's secure portal to confirm.</p>
+          </div>
+
+          <div class="secure-strip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <span>Secured by 256-bit SSL · Your card details never touch our servers</span>
+          </div>
+        </section>
+
+        <p class="legal">
+          By confirming, you agree to our <a href="#">Terms</a> and <a href="#">Cancellation Policy</a>.
+          Free cancellation up to 30 days before departure.
+        </p>
+      </form>
+
+      <!-- ===== Right: order summary ===== -->
+      <aside class="order-summary">
+        <div class="os-tour">
+          <div class="os-img" style="background-image:url('https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=600&q=80')"></div>
+          <div>
+            <span class="os-tag">SIGNATURE · 5 NIGHTS</span>
+            <h4>Manali Snow Trail</h4>
+            <p>Himachal Pradesh · Private vehicle</p>
+          </div>
+        </div>
+
+        <ul class="os-breakdown">
+          <li><span>Base price · per traveller</span><strong>₹18,900</strong></li>
+          <li><span>Travellers <em id="osCount">× 2</em></span><strong id="osSubtotal">₹37,800</strong></li>
+          <li><span>Service fee</span><strong>₹1,200</strong></li>
+          <li><span>GST (5%)</span><strong id="osTax">₹1,950</strong></li>
+          <li class="os-discount"><span>Welcome credit</span><strong>− ₹2,000</strong></li>
+        </ul>
+
+        <div class="os-total">
+          <span>Total payable</span>
+          <strong id="osTotal">₹38,950</strong>
+        </div>
+
+        <button type="submit" form="bookingForm" class="btn btn-primary os-pay">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Pay &amp; Confirm
+        </button>
+
+        <ul class="os-trust">
+          <li>✓ Free cancellation up to 30 days</li>
+          <li>✓ 24/7 trip concierge on WhatsApp</li>
+          <li>✓ Instant e-receipt &amp; itinerary PDF</li>
+        </ul>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ============ SUCCESS MODAL ============ -->
+  <div class="booking-modal" id="successModal" aria-hidden="true">
+    <div class="bm-backdrop" id="bmBackdrop"></div>
+    <div class="bm-card" role="dialog" aria-labelledby="bmTitle">
+      <div class="bm-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4 10-10"/></svg>
+      </div>
+      <h2 id="bmTitle">Booking Confirmed</h2>
+      <p>A confirmation and full itinerary are on their way to your inbox.</p>
+      <div class="bm-ref">
+        <span>Booking Reference</span>
+        <code id="bmRef">RG-2026-000000</code>
+      </div>
+      <div class="bm-actions">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <button type="button" class="btn-ghost-link" id="bmClose">Make another booking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="f-col f-brand">
+        <a href="index.html" class="logo footer-logo" aria-label="Roamingoo home"><span class="logo-word">Roamingoo</span></a>
+        <p>Outdoor adventures, planned by people who actually go.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 4.6a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.3 8.3 0 0 1 2 18.3a11.7 11.7 0 0 0 6.3 1.8c7.6 0 11.7-6.3 11.7-11.7v-.5A8.3 8.3 0 0 0 22 5.8z"/></svg></a>
+        </div>
+      </div>
+      <div class="f-col"><h5>Explore</h5><a href="index.html#adventure">Adventures</a><a href="index.html#about">About</a><a href="index.html#blog">Blog</a><a href="index.html#booknow">Book Now</a></div>
+      <div class="f-col"><h5>Company</h5><a href="#">Our Story</a><a href="#">Press</a><a href="#">Careers</a><a href="#">Privacy</a></div>
+      <div class="f-col"><h5>Contact</h5><a href="mailto:hello@roamingoo.com">hello@roamingoo.com</a><a href="tel:+919999999999">+91 99999 99999</a><p>14 Heritage Lane,<br/>New Delhi, India</p></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> Roamingoo. All rights reserved.</span><span>Terms · Privacy · Cookies</span></div>
+  </footer>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <a href="index.html#adventure" class="m-link">Adventure</a>
+    <a href="index.html#about" class="m-link">About</a>
+    <a href="index.html#blog" class="m-link">Blog</a>
+    <a href="index.html#booknow" class="m-link">Book Now</a>
+    <a href="contact.html" class="m-link">Contact</a>
+    <a href="#login" class="btn btn-primary m-cta">Login</a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

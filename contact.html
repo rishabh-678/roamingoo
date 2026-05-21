@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Roamingoo — our team is here to plan your next outdoor adventure." />
+  <title>Contact — Roamingoo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-contact">
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="site-header solid" id="siteHeader">
+    <nav class="nav" aria-label="Primary">
+
+      <a href="index.html" class="logo" aria-label="Roamingoo home">
+        <span class="logo-word">Roamingoo</span>
+      </a>
+
+      <div class="nav-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+        </svg>
+        <input type="text" placeholder="Search destinations, trips, guides…" aria-label="Search" />
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html#adventure" class="nav-link">Adventure</a></li>
+        <li><a href="index.html#about" class="nav-link">About</a></li>
+        <li><a href="index.html#blog" class="nav-link">Blog</a></li>
+        <li><a href="index.html#booknow" class="nav-link">Book Now</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+
+      <a href="#login" class="btn-login">Login</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <section class="page-header">
+    <div class="ph-bg" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80')"></div>
+    <div class="ph-overlay"></div>
+    <div class="ph-content">
+      <p class="ph-eyebrow reveal">— We'd love to hear from you —</p>
+      <h1 class="ph-title reveal" data-delay="150">Get In Touch</h1>
+      <p class="ph-sub reveal" data-delay="300">
+        Whether it's a question, a custom trip request, or just a hello — drop us a line and our team will get back within 24 hours.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT SECTION ============ -->
+  <section class="section contact-section">
+    <div class="contact-grid">
+
+      <!-- Form -->
+      <div class="contact-form-wrap reveal">
+        <h2 class="section-title">Send us a message</h2>
+        <p class="contact-lead">Fill in the form and we'll be in touch shortly.</p>
+
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field-row">
+            <label class="field">
+              <span>Full Name</span>
+              <input type="text" name="name" required placeholder="Jane Doe" />
+            </label>
+            <label class="field">
+              <span>Email Address</span>
+              <input type="email" name="email" required placeholder="jane@example.com" />
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Phone (optional)</span>
+              <input type="tel" name="phone" placeholder="+91 99999 99999" />
+            </label>
+            <label class="field">
+              <span>Subject</span>
+              <select name="subject" required>
+                <option value="">Choose a topic…</option>
+                <option>Trip planning</option>
+                <option>Custom itinerary</option>
+                <option>Partnership</option>
+                <option>Press / media</option>
+                <option>Something else</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Your Message</span>
+            <textarea name="message" rows="6" required placeholder="Tell us about your dream trip — destination, dates, group size, anything else we should know…"></textarea>
+          </label>
+
+          <div class="field-actions">
+            <label class="checkbox">
+              <input type="checkbox" required />
+              <span>I agree to be contacted about my enquiry.</span>
+            </label>
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+
+          <div class="form-status" id="formStatus" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- Sidebar info -->
+      <aside class="contact-info reveal" data-delay="150">
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a7 7 0 0 1 14 0c0 5.65-7 10-7 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+          </div>
+          <h4>Visit Us</h4>
+          <p>14 Heritage Lane,<br/>New Delhi, India 110001</p>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9 6 9-6"/><rect x="3" y="5" width="18" height="14" rx="2"/></svg>
+          </div>
+          <h4>Email</h4>
+          <a href="mailto:hello@roamingoo.com">hello@roamingoo.com</a>
+          <a href="mailto:trips@roamingoo.com">trips@roamingoo.com</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h4>Phone</h4>
+          <a href="tel:+919999999999">+91 99999 99999</a>
+          <a href="tel:+911140404040">+91 11 4040 4040</a>
+        </div>
+
+        <div class="info-card">
+          <div class="info-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          </div>
+          <h4>Hours</h4>
+          <p>Mon — Sat · 9am to 7pm IST<br/>Sunday · By appointment</p>
+        </div>
+
+        <div class="info-socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 4.6a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.3 8.3 0 0 1 2 18.3a11.7 11.7 0 0 0 6.3 1.8c7.6 0 11.7-6.3 11.7-11.7v-.5A8.3 8.3 0 0 0 22 5.8z"/></svg></a>
+        </div>
+
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ MAP STRIP ============ -->
+  <section class="section map-section">
+    <div class="map-wrap reveal">
+      <iframe
+        title="Roamingoo location"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=77.20%2C28.60%2C77.24%2C28.64&amp;layer=mapnik&amp;marker=28.6200%2C77.2200"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      <div class="map-card">
+        <h4>Roamingoo HQ</h4>
+        <p>14 Heritage Lane, New Delhi</p>
+        <a href="https://www.openstreetmap.org/?mlat=28.62&amp;mlon=77.22#map=15/28.62/77.22"
+           target="_blank" rel="noopener" class="map-link">Open in Maps →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+
+      <div class="f-col f-brand">
+        <a href="index.html" class="logo footer-logo" aria-label="Roamingoo home">
+          <span class="logo-word">Roamingoo</span>
+        </a>
+        <p>Outdoor adventures, planned by people who actually go.</p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 4.6a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.3 8.3 0 0 1 2 18.3a11.7 11.7 0 0 0 6.3 1.8c7.6 0 11.7-6.3 11.7-11.7v-.5A8.3 8.3 0 0 0 22 5.8z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="f-col">
+        <h5>Explore</h5>
+        <a href="index.html#adventure">Adventures</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#booknow">Book Now</a>
+      </div>
+
+      <div class="f-col">
+        <h5>Company</h5>
+        <a href="#">Our Story</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <a href="#">Privacy</a>
+      </div>
+
+      <div class="f-col">
+        <h5>Contact</h5>
+        <a href="mailto:hello@roamingoo.com">hello@roamingoo.com</a>
+        <a href="tel:+919999999999">+91 99999 99999</a>
+        <p>14 Heritage Lane,<br/>New Delhi, India</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Roamingoo. All rights reserved.</span>
+      <span>Terms · Privacy · Cookies</span>
+    </div>
+  </footer>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+    <a href="index.html#adventure" class="m-link">Adventure</a>
+    <a href="index.html#about" class="m-link">About</a>
+    <a href="index.html#blog" class="m-link">Blog</a>
+    <a href="index.html#booknow" class="m-link">Book Now</a>
+    <a href="contact.html" class="m-link">Contact</a>
+    <a href="#login" class="btn btn-primary m-cta">Login</a>
+  </div>
+
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
