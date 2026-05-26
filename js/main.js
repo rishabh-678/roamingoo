@@ -425,19 +425,26 @@
     if (!input) return;
 
     const INDEX = [
-      { title: 'Home', desc: 'Roamingoo home', href: 'index.html', keywords: 'home main landing roamingoo' },
-      { title: 'Adventures', desc: 'Browse all destinations', href: 'index.html#adventure', keywords: 'adventures wonders destinations explore' },
-      { title: 'Book Now', desc: 'Reserve and pay for your trip', href: 'booking.html', keywords: 'book booking pay payment reserve checkout confirm' },
-      { title: 'Contact', desc: 'Get in touch with us', href: 'contact.html', keywords: 'contact email phone reach help support' },
-      { title: 'Tours', desc: 'Popular tour packages', href: 'tour.html', keywords: 'tour package itinerary trip' },
-      { title: 'Destinations', desc: 'All Roamingoo destinations', href: 'destination.html', keywords: 'destinations places india travel' },
-      { title: 'Uttarakhand', desc: 'Sacred peaks, Char Dham, Ganga', href: 'destination-uttarakhand.html', keywords: 'uttarakhand devbhumi rishikesh kedarnath badrinath gangotri yamunotri valley of flowers auli har ki dun trek char dham nanda devi' },
-      { title: 'Goa', desc: 'Beaches and sunsets', href: 'destination-goa.html', keywords: 'goa beach beaches arabian sea sunset palolem anjuna baga' },
-      { title: 'Banaras', desc: 'Ghats and the sacred Ganga', href: 'destination-banaras.html', keywords: 'banaras varanasi kashi ghats ganga aarti temple' },
+      // Journeys (current phase destinations)
+      { title: 'Spiti Valley', desc: 'High altitude roads and mountain silence', href: 'destination.html', keywords: 'spiti valley himachal backpacking high altitude mountain solo group', group: 'Journeys' },
+      { title: 'Manali', desc: 'Mountain cafés and shared stories', href: 'destination.html', keywords: 'manali himachal backpacking mountain cafe solo old kasol parvati', group: 'Journeys' },
+      { title: 'Goa', desc: 'Coastal days and easy conversations', href: 'destination-goa.html', keywords: 'goa beach beaches arabian sea sunset palolem anjuna baga coastal social', group: 'Journeys' },
+      { title: 'Varanasi', desc: 'Stories, rituals and old city mornings', href: 'destination-banaras.html', keywords: 'varanasi banaras kashi ghats ganga aarti culture spiritual heritage', group: 'Journeys' },
+      { title: 'Mussoorie', desc: 'Disconnect to reconnect', href: 'destination-uttarakhand.html', keywords: 'mussoorie uttarakhand digital detox retreat slow himalaya hills reset', group: 'Journeys' },
+      { title: 'Kasol', desc: 'Riverside trails and backpacking days', href: 'destination.html', keywords: 'kasol parvati himachal river backpacking hippie israeli cafe trek', group: 'Journeys' },
+      { title: 'Rishikesh', desc: 'River energy and weekend adventure', href: 'destination-uttarakhand.html', keywords: 'rishikesh uttarakhand ganga rafting weekend adventure yoga river beatles ashram', group: 'Journeys' },
+
+      // Site
+      { title: 'All Journeys', desc: 'Browse every Roamingoo journey', href: 'index.html#journeys', keywords: 'journeys destinations explore all places india travel' },
+      { title: 'How We Travel', desc: 'Solo-friendly, small group, responsible', href: 'index.html#why', keywords: 'why how we travel small group solo responsible philosophy' },
+      { title: 'Our Story', desc: 'Why Roamingoo exists', href: 'index.html#story', keywords: 'story about who we are mission philosophy' },
+      { title: 'Plan With Us', desc: 'Reserve your seat', href: 'booking.html', keywords: 'plan book booking pay payment reserve checkout confirm' },
+      { title: 'Contact', desc: 'Get in touch with us', href: 'contact.html', keywords: 'contact email phone reach help support whatsapp' },
+
+      // Legacy / extended destinations (kept reachable from search)
+      { title: 'Uttarakhand', desc: 'Sacred peaks, Char Dham, Ganga', href: 'destination-uttarakhand.html', keywords: 'uttarakhand devbhumi kedarnath badrinath gangotri yamunotri valley of flowers auli har ki dun trek char dham nanda devi' },
       { title: 'West Bengal', desc: 'Tea gardens and tigers', href: 'destination-west-bengal.html', keywords: 'west bengal kolkata darjeeling sundarbans tea tigers' },
-      { title: 'Sikkim', desc: 'Monasteries and Kangchenjunga', href: 'destination-sikkim.html', keywords: 'sikkim gangtok kangchenjunga tsomgo lake monastery' },
-      { title: 'About', desc: 'Our story', href: 'index.html#about', keywords: 'about story team who' },
-      { title: 'Blog', desc: 'Latest from the trail', href: 'index.html#blog', keywords: 'blog articles posts stories journal' }
+      { title: 'Sikkim', desc: 'Monasteries and Kangchenjunga', href: 'destination-sikkim.html', keywords: 'sikkim gangtok kangchenjunga tsomgo lake monastery' }
     ];
 
     const list = document.createElement('div');
@@ -466,14 +473,30 @@
       list.querySelectorAll('.sr-item').forEach((el, i) => el.classList.toggle('active', i === active));
     }
 
+    function renderPicker() {
+      // Seed the dropdown with the 7 journeys when the user focuses the
+      // empty search bar — turns the input into a lightweight destination picker.
+      const journeys = INDEX.filter((it) => it.group === 'Journeys');
+      current = journeys.slice(0, 7);
+      list.classList.add('open', 'picker-mode');
+      list.innerHTML =
+        '<div class="sr-section-label">Choose a journey</div>' +
+        current.map((item, i) =>
+          '<a class="sr-item" href="' + item.href + '" data-i="' + i + '">' +
+          '<span class="sr-title">' + esc(item.title) + '</span>' +
+          '<span class="sr-desc">' + esc(item.desc) + '</span>' +
+          '</a>'
+        ).join('');
+      active = 0;
+      updateActive();
+    }
+
     function render(q) {
       if (!q) {
-        list.classList.remove('open');
-        list.innerHTML = '';
-        current = [];
-        active = -1;
+        renderPicker();
         return;
       }
+      list.classList.remove('picker-mode');
       current = INDEX
         .map((item) => ({ item, s: score(q, item) }))
         .filter((x) => x.s > 0)
@@ -498,7 +521,7 @@
     }
 
     input.addEventListener('input', () => render(input.value.trim()));
-    input.addEventListener('focus', () => { if (input.value.trim()) render(input.value.trim()); });
+    input.addEventListener('focus', () => render(input.value.trim()));
     input.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowDown') {
         e.preventDefault();

@@ -2733,3 +2733,359 @@ em{ color:var(--accent); font-style:italic; }
     scroll-behavior:auto !important;
   }
 }
+
+/* =========================================================
+   HOMEPAGE REPOSITIONING (Travel Deeper)
+   Additions only — reuses existing tokens.
+   Section map:
+     01 Hero CTAs        .hero-ctas / .btn-ghost
+     02 Journey Types    .journey-types / .kinds-grid / .kind-card
+     03 Wonder tag/date  .wonder-tag / .wonder-dates
+     04 Community block  .perfect-aside (reuses .perfect)
+     06 Story band       .story-band / .story-inner
+     07 Rules strip      .rules-strip / .rules-list
+     08 Feel Deeply      .explore-tagline (overlay on .explore-canvas)
+     09 Safety/Trust     .trust .trust-grid (reuses .reason)
+     10 Final CTA        .final-cta / .final-bg / .final-inner
+     Footer              .footer-tag
+   ========================================================= */
+
+/* ---------- 01 · HERO CTAs + ghost btn ---------- */
+.hero-ctas{
+  display:flex;
+  gap:14px;
+  margin-top:28px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.btn-ghost{
+  background:transparent;
+  color:var(--ink);
+  border:1px solid var(--line-strong);
+}
+.btn-ghost:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+  transform:translateY(-2px);
+}
+
+/* ---------- 02 · FIND YOUR KIND OF JOURNEY ---------- */
+.journey-types{
+  padding-top:90px;
+  padding-bottom:30px;
+}
+.journey-types .section-head{
+  margin-bottom:36px;
+}
+.kinds-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  max-width:1080px;
+  margin:0 auto;
+}
+.kind-card{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  padding:22px 22px 24px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-card);
+  background:rgba(255,255,255,0.02);
+  color:var(--ink);
+  transition:border-color var(--t-fast), background var(--t-fast),
+             transform var(--t-fast);
+}
+.kind-card:hover{
+  border-color:rgba(212,255,61,0.45);
+  background:rgba(212,255,61,0.04);
+  transform:translateY(-3px);
+}
+.kind-eyebrow{
+  font-size:10.5px;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:600;
+}
+.kind-card h3{
+  font-family:var(--font-body);
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:.02em;
+  margin:0;
+  color:var(--ink);
+}
+.kind-card p{
+  font-size:12.5px;
+  color:var(--ink-dim);
+  margin:0;
+  line-height:1.6;
+}
+@media (min-width:640px){
+  .kinds-grid{ grid-template-columns:repeat(2,1fr); gap:16px; }
+}
+@media (min-width:960px){
+  .kinds-grid{ grid-template-columns:repeat(4,1fr); gap:18px; }
+}
+
+/* ---------- 03 · WONDER tag + dates ---------- */
+.wonder-tag{
+  position:absolute;
+  top:14px; left:14px;
+  z-index:2;
+  background:rgba(15,20,25,0.7);
+  backdrop-filter:blur(6px);
+  border:1px solid var(--line-strong);
+  color:var(--ink);
+  font-size:10px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:5px 11px;
+  border-radius:999px;
+  font-weight:600;
+}
+.wonder-dates{
+  display:inline-block;
+  margin-top:6px;
+  font-size:10.5px;
+  letter-spacing:.08em;
+  color:var(--accent);
+  font-weight:500;
+}
+
+/* ---------- 04 · Community aside line ---------- */
+.perfect-aside{
+  font-style:italic;
+  color:var(--ink);
+  opacity:.85;
+  margin-bottom:28px !important;
+}
+
+/* ---------- 06 · STORY BAND ---------- */
+.story-band{
+  padding-top:90px;
+  padding-bottom:90px;
+  text-align:center;
+}
+.story-inner{
+  max-width:720px;
+  margin:0 auto;
+}
+.story-eyebrow{
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 18px;
+  font-weight:600;
+}
+.story-band .section-title{
+  font-size:clamp(28px, 3.4vw, 42px);
+  margin-bottom:24px;
+}
+.story-body{
+  font-size:15px;
+  color:var(--ink-dim);
+  line-height:1.85;
+  margin:0 0 18px;
+}
+.story-band .btn{ margin-top:18px; }
+
+/* ---------- 07 · TRAVEL RULES STRIP ---------- */
+.rules-strip{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,0.015);
+  padding:54px 24px;
+}
+.rules-inner{
+  max-width:var(--container);
+  margin:0 auto;
+}
+.rules-head{
+  text-align:center;
+  margin-bottom:30px;
+}
+.rules-title{
+  font-family:var(--font-display);
+  font-size:clamp(22px, 2.4vw, 28px);
+  font-weight:600;
+  margin:0 0 8px;
+  color:var(--ink);
+}
+.rules-sub{
+  font-size:12.5px;
+  letter-spacing:.06em;
+  color:var(--ink-dim);
+  margin:0;
+}
+.rules-list{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:18px 24px;
+  list-style:none;
+}
+.rules-list li{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.rule-ico{
+  flex-shrink:0;
+  width:34px; height:34px;
+  border-radius:50%;
+  background:rgba(212,255,61,0.10);
+  color:var(--accent);
+  display:flex; align-items:center; justify-content:center;
+}
+.rule-ico svg{ width:16px; height:16px; }
+.rules-list h3{
+  font-family:var(--font-body);
+  font-size:13px;
+  font-weight:500;
+  color:var(--ink);
+  margin:0;
+  letter-spacing:.02em;
+}
+@media (min-width:768px){
+  .rules-list{ grid-template-columns:repeat(5, 1fr); gap:20px; }
+  .rules-list li{ flex-direction:column; text-align:center; gap:10px; }
+  .rules-list h3{ font-size:12.5px; }
+}
+
+/* ---------- 08 · FEEL DEEPLY overlay tagline ---------- */
+.explore-tagline{
+  position:absolute;
+  right:24px; bottom:20px;
+  z-index:4;
+  font-family:var(--font-display);
+  font-size:clamp(18px, 2vw, 26px);
+  font-style:italic;
+  color:var(--ink);
+  text-shadow:0 4px 18px rgba(0,0,0,0.6);
+  letter-spacing:.01em;
+  pointer-events:none;
+}
+.explore .ann-card strong{
+  display:block;
+  font-family:var(--font-body);
+  font-size:12px;
+  font-weight:600;
+  color:var(--accent);
+  letter-spacing:.06em;
+  margin-bottom:3px;
+}
+/* hide the old pulsing frame inside repurposed explore section */
+.explore .explore-frame{ display:none; }
+
+/* ---------- 09 · SAFETY & TRUST (6 cards, reuses .reason) ---------- */
+.trust-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:40px;
+  max-width:var(--container);
+  margin:0 auto;
+  text-align:center;
+}
+.trust-grid .reason p{
+  max-width:260px;
+}
+@media (min-width:640px){
+  .trust-grid{ grid-template-columns:repeat(2,1fr); gap:36px 30px; }
+}
+@media (min-width:960px){
+  .trust-grid{ grid-template-columns:repeat(3,1fr); gap:46px 40px; }
+}
+
+/* ---------- 10 · FINAL CTA ---------- */
+.final-cta{
+  position:relative;
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 24px;
+  margin-top:80px;
+  overflow:hidden;
+  isolation:isolate;
+}
+.final-bg{
+  position:absolute; inset:0;
+  background-size:cover;
+  background-position:center;
+  z-index:-2;
+  transform:scale(1.05);
+}
+.final-overlay{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg, rgba(15,20,25,0.55) 0%, rgba(15,20,25,0.75) 100%);
+  z-index:-1;
+}
+.final-inner{
+  max-width:680px;
+  text-align:center;
+}
+.final-eyebrow{
+  font-size:11px;
+  letter-spacing:.32em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:600;
+  margin:0 0 18px;
+}
+.final-title{
+  font-family:var(--font-display);
+  font-size:clamp(34px, 5.5vw, 60px);
+  font-weight:700;
+  letter-spacing:.02em;
+  line-height:1.05;
+  margin:0 0 22px;
+  text-shadow:0 8px 30px rgba(0,0,0,0.5);
+}
+.final-sub{
+  color:var(--ink);
+  opacity:.92;
+  font-size:15px;
+  line-height:1.75;
+  max-width:520px;
+  margin:0 auto 32px;
+}
+.btn.large{
+  padding:16px 38px;
+  font-size:14px;
+}
+
+/* ---------- FOOTER tagline ---------- */
+.footer-tag{
+  font-family:var(--font-display);
+  font-size:15px;
+  color:var(--ink) !important;
+  opacity:.85;
+  margin:0 0 18px !important;
+}
+
+/* ---------- Search picker (focus-empty seeds destinations) ---------- */
+.search-results.picker-mode .sr-section-label{
+  display:block;
+  padding:10px 14px 4px;
+  font-size:10.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--ink-dim);
+  font-weight:600;
+}
+
+/* ---------- Small-screen tweaks for new sections ---------- */
+@media (max-width: 639px){
+  .journey-types{ padding:60px 16px 16px; }
+  .story-band{ padding:60px 16px; }
+  .rules-strip{ padding:42px 16px; }
+  .rules-list{ grid-template-columns:1fr; gap:14px; }
+  .rules-list li{ flex-direction:row; text-align:left; }
+  .final-cta{ min-height:420px; padding:90px 16px; margin-top:60px; }
+  .explore-tagline{ right:14px; bottom:12px; font-size:16px; }
+  .hero-ctas{ gap:10px; margin-top:22px; }
+  .hero-ctas .btn{ padding:11px 22px; font-size:13px; }
+}
