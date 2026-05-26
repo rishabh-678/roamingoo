@@ -494,22 +494,16 @@ em{ color:var(--accent); font-style:italic; }
   position:relative;
   height:280px;
   border-radius:var(--radius-card);
-  background-size:115% auto;
+  background-size:cover;
   background-position:center;
   background-color:#000;
   overflow:hidden;
   cursor:pointer;
-  transition:background-size 1.2s var(--ease), transform var(--t-med), box-shadow var(--t-med);
 }
 .wonder-card::before{
   content:'';
   position:absolute; inset:0;
   background:linear-gradient(180deg, transparent 40%, rgba(15,20,25,0.92) 100%);
-}
-.wonder-card:hover{
-  background-size:135% auto;
-  transform:translateY(-6px);
-  box-shadow:0 24px 50px -16px rgba(0,0,0,0.7);
 }
 .wonder-info{
   position:absolute;
