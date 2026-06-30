@@ -426,7 +426,7 @@
 
     const INDEX = [
       // Journeys (current phase destinations)
-      { title: 'Spiti Valley', desc: 'High altitude roads and mountain silence', href: 'destination.html', keywords: 'spiti valley himachal backpacking high altitude mountain solo group', group: 'Journeys' },
+      { title: 'Spiti Valley', desc: 'High altitude roads and mountain silence', href: 'backpacking.html', keywords: 'spiti valley himachal backpacking high altitude mountain solo group', group: 'Journeys' },
       { title: 'Manali', desc: 'Mountain cafés and shared stories', href: 'destination.html', keywords: 'manali himachal backpacking mountain cafe solo old kasol parvati', group: 'Journeys' },
       { title: 'Goa', desc: 'Coastal days and easy conversations', href: 'destination-goa.html', keywords: 'goa beach beaches arabian sea sunset palolem anjuna baga coastal social', group: 'Journeys' },
       { title: 'Varanasi', desc: 'Stories, rituals and old city mornings', href: 'destination-banaras.html', keywords: 'varanasi banaras kashi ghats ganga aarti culture spiritual heritage', group: 'Journeys' },

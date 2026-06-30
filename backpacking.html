@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Roamingoo Backpacking Collection — slow, curious journeys across India for solo travellers, first-time backpackers and small groups. Mountain roads, local stories and shared journeys. Travel deeper. Leave lighter."
+    />
+    <meta name="theme-color" content="#0f1419" />
+    <meta property="og:title" content="Backpacking Collection — Roamingoo" />
+    <meta
+      property="og:description"
+      content="Roads worth slowing down for. Backpacking journeys built around curiosity, presence and the road itself."
+    />
+    <meta property="og:type" content="website" />
+    <title>Backpacking Collection — Roamingoo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/backpacking.css" />
+
+    <!-- Structured data: Backpacking collection + journeys for AEO discoverability -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Backpacking Collection",
+      "description": "Slow, curious backpacking journeys across India for solo travellers, first-time backpackers and small groups.",
+      "url": "https://roamingoo.com/backpacking.html",
+      "isPartOf": { "@type": "TravelAgency", "name": "Roamingoo", "url": "https://roamingoo.com/" },
+      "about": [
+        { "@type": "TouristTrip", "name": "Spiti Valley Backpacking" },
+        { "@type": "TouristTrip", "name": "Manali Backpacking" },
+        { "@type": "TouristTrip", "name": "Kasol Backpacking" }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <!-- ============ NAVBAR ============ -->
+    <header class="site-header solid" id="siteHeader">
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" class="logo" aria-label="Roamingoo home">
+          <span class="logo-word">Roamingoo</span>
+        </a>
+
+        <div class="nav-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7" /><path d="m20 20-3.5-3.5" />
+          </svg>
+          <input type="text" placeholder="Where do you want to go?" aria-label="Find a journey" />
+        </div>
+
+        <ul class="nav-menu">
+          <li><a href="index.html#journeys" class="nav-link active">Journeys</a></li>
+          <li><a href="index.html#why" class="nav-link">How We Travel</a></li>
+          <li><a href="index.html#story" class="nav-link">Stories</a></li>
+          <li><a href="booking.html" class="nav-link">Plan With Us</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <a href="#login" class="btn-login">Login</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="bp-wrap">
+      <!-- ============ 01 · HERO ============ -->
+      <section class="bp-hero" id="top">
+        <div
+          class="bp-hero-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80');"
+        ></div>
+        <div class="bp-hero-overlay"></div>
+
+        <div class="bp-hero-inner">
+          <span class="bp-label reveal">Backpacking Collection</span>
+          <h1 class="bp-hero-title reveal" data-delay="100">Roads Worth Slowing Down For.</h1>
+          <p class="bp-hero-body reveal" data-delay="200">
+            Some journeys are measured in kilometres. Others are measured in
+            conversations with strangers, mountain roads that never seem to end,
+            and stories you carry long after you return home.
+          </p>
+          <p class="bp-hero-body reveal" data-delay="300">
+            Backpacking is not about rushing from one place to another. It is
+            about travelling with curiosity, staying present and letting the road
+            surprise you.
+          </p>
+          <div class="bp-hero-ctas reveal" data-delay="400">
+            <a href="#journeys" class="btn btn-primary">Explore Journeys</a>
+            <a href="contact.html" class="btn btn-ghost">Talk To A Trip Planner</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 02 · COLLECTION OVERVIEW STRIP ============ -->
+      <section class="bp-strip" aria-label="Collection overview">
+        <div class="bp-container">
+          <div class="bp-strip-grid">
+            <article class="bp-strip-card reveal" data-delay="100">
+              <h3>Travel Style</h3>
+              <ul>
+                <li>Backpacking</li>
+                <li>Solo Friendly</li>
+                <li>Small Groups</li>
+              </ul>
+            </article>
+            <article class="bp-strip-card reveal" data-delay="200">
+              <h3>Designed For</h3>
+              <ul>
+                <li>Curious Explorers</li>
+                <li>First Time Backpackers</li>
+                <li>Friends</li>
+              </ul>
+            </article>
+            <article class="bp-strip-card reveal" data-delay="300">
+              <h3>What You'll Find</h3>
+              <ul>
+                <li>Mountain Roads</li>
+                <li>Local Stories</li>
+                <li>Shared Journeys</li>
+              </ul>
+            </article>
+            <article class="bp-strip-card reveal" data-delay="400">
+              <h3>Travel Pace</h3>
+              <ul>
+                <li>Slow Enough To Notice</li>
+                <li>Fast Enough To Explore</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 03 · FEATURED JOURNEYS ============ -->
+      <section class="bp-journeys" id="journeys" aria-labelledby="bp-journeys-title">
+        <div class="bp-container">
+          <header class="bp-section-head reveal">
+            <span class="bp-eyebrow">Curated Journeys</span>
+            <h2 class="section-title" id="bp-journeys-title">Choose Your Next Road</h2>
+            <p class="bp-sub">
+              Every journey in this collection is designed for travellers who
+              believe the road itself is part of the experience.
+            </p>
+          </header>
+
+          <div class="bp-jgrid">
+            <!-- Spiti -->
+            <article class="bp-jcard reveal" data-delay="100">
+              <div
+                class="bp-jcard-media"
+                style="background-image: url('assets/images/Blog%20%20News%20Banners%20%20%20(7)_20250527T090622423Z.png');"
+              >
+                <span class="bp-jtag">High Altitude</span>
+                <span class="bp-jduration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  7 Days
+                </span>
+              </div>
+              <div class="bp-jbody">
+                <h3>Spiti Valley Backpacking</h3>
+                <p>
+                  High altitude roads, ancient monasteries and mountain silence
+                  that stays with you long after the journey ends.
+                </p>
+                <div class="bp-jfoot">
+                  <span class="bp-jprice"><span>Starting from</span><strong>₹18,900</strong></span>
+                  <a href="destination.html" class="bp-jcta">
+                    View Journey
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Manali -->
+            <article class="bp-jcard reveal" data-delay="200">
+              <div
+                class="bp-jcard-media"
+                style="background-image: url('assets/images/Places-To-Visit-in-Manali.jpg');"
+              >
+                <span class="bp-jtag">Beginner Friendly</span>
+                <span class="bp-jduration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  5 Days
+                </span>
+              </div>
+              <div class="bp-jbody">
+                <h3>Manali Backpacking</h3>
+                <p>
+                  Mountain cafés, hidden trails and the perfect introduction to
+                  life on the road.
+                </p>
+                <div class="bp-jfoot">
+                  <span class="bp-jprice"><span>Starting from</span><strong>₹12,500</strong></span>
+                  <a href="destination.html" class="bp-jcta">
+                    View Journey
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Kasol -->
+            <article class="bp-jcard reveal" data-delay="300">
+              <div
+                class="bp-jcard-media"
+                style="background-image: url('assets/images/000e1c84-852c-4129-80d9-2b50018c4f9a.jpg.jpeg');"
+              >
+                <span class="bp-jtag">Slow Travel</span>
+                <span class="bp-jduration">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  4 Days
+                </span>
+              </div>
+              <div class="bp-jbody">
+                <h3>Kasol Backpacking</h3>
+                <p>
+                  Riverside walks, slow mornings and the kind of days that ask
+                  nothing from you except presence.
+                </p>
+                <div class="bp-jfoot">
+                  <span class="bp-jprice"><span>Starting from</span><strong>₹9,800</strong></span>
+                  <a href="destination.html" class="bp-jcta">
+                    View Journey
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 04 · THE PEOPLE WHO TRAVEL THIS WAY ============ -->
+      <section class="bp-people" aria-labelledby="bp-people-title">
+        <div class="bp-container">
+          <header class="bp-section-head reveal">
+            <h2 class="section-title" id="bp-people-title">Not Everyone Travels The Same Way.</h2>
+          </header>
+          <div class="bp-people-grid">
+            <article class="bp-pcard reveal" data-delay="100">
+              <span class="bp-pnum">01</span>
+              <h3>Going Solo</h3>
+              <p>For people ready to take their first journey alone.</p>
+            </article>
+            <article class="bp-pcard reveal" data-delay="200">
+              <span class="bp-pnum">02</span>
+              <h3>Friends Escape</h3>
+              <p>For shared playlists and spontaneous plans.</p>
+            </article>
+            <article class="bp-pcard reveal" data-delay="300">
+              <span class="bp-pnum">03</span>
+              <h3>Small Group Travellers</h3>
+              <p>For people who enjoy the road as much as the destination.</p>
+            </article>
+            <article class="bp-pcard reveal" data-delay="400">
+              <span class="bp-pnum">04</span>
+              <h3>Curious Explorers</h3>
+              <p>For people who prefer stories over sightseeing lists.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 05 · STORYTELLING BLOCK ============ -->
+      <section class="bp-story" aria-labelledby="bp-story-title">
+        <div class="bp-container">
+          <div class="bp-story-grid">
+            <div
+              class="bp-story-media reveal"
+              style="background-image: url('https://images.unsplash.com/photo-1533240332313-0db49b459ad6?auto=format&fit=crop&w=1200&q=80');"
+            ></div>
+            <div class="bp-story-text reveal" data-delay="150">
+              <span class="bp-eyebrow">Experience It</span>
+              <h2 id="bp-story-title">Backpacking Changes The Way You Travel.</h2>
+              <p>The best backpacking journeys rarely follow a script.</p>
+              <p class="bp-tight">You miss a turn and discover a village.</p>
+              <p class="bp-tight">You stop for tea and stay for a conversation.</p>
+              <p>You sit beside someone on a bus and leave with a story.</p>
+              <p>
+                The destination matters. But the moments in between often become
+                the ones you remember most.
+              </p>
+              <p>That is why we backpack.</p>
+              <p class="bp-signature">Travel deeper. Leave lighter.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 06 · THE ROAMINGOO WAY ============ -->
+      <section class="bp-way" aria-labelledby="bp-way-title">
+        <div class="bp-container">
+          <header class="bp-section-head reveal">
+            <h2 class="section-title" id="bp-way-title">The Roamingoo Way</h2>
+          </header>
+          <div class="bp-way-grid">
+            <article class="bp-way-card reveal" data-delay="100">
+              <div class="bp-way-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="7" cy="9" r="2.4"/><circle cx="17" cy="9" r="2.4"/><circle cx="12" cy="9" r="2.4"/>
+                  <path d="M3 19c.6-2.6 2.2-4 4-4M21 19c-.6-2.6-2.2-4-4-4M8 19c.6-2.6 2-4 4-4s3.4 1.4 4 4"/>
+                </svg>
+              </div>
+              <h3>Small Groups</h3>
+              <p>No crowds. Better conversations.</p>
+            </article>
+            <article class="bp-way-card reveal" data-delay="200">
+              <div class="bp-way-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="8" r="3.2"/><path d="M5.5 20c.7-3.4 3.4-5.6 6.5-5.6S17.8 16.6 18.5 20"/>
+                </svg>
+              </div>
+              <h3>Solo Friendly</h3>
+              <p>Come alone. Never feel alone.</p>
+            </article>
+            <article class="bp-way-card reveal" data-delay="300">
+              <div class="bp-way-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3c-3.5 4-5 7-5 10a5 5 0 0 0 10 0c0-3-1.5-6-5-10z"/><path d="M12 13v6"/>
+                </svg>
+              </div>
+              <h3>Travel Kindly</h3>
+              <p>Respect people, culture and nature.</p>
+            </article>
+            <article class="bp-way-card reveal" data-delay="400">
+              <div class="bp-way-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6h13l3 3v9H4z"/><path d="M4 10h16"/><path d="M8 6V4h6v2"/>
+                </svg>
+              </div>
+              <h3>Real Experiences</h3>
+              <p>Beyond checklists and sightseeing.</p>
+            </article>
+            <article class="bp-way-card reveal" data-delay="500">
+              <div class="bp-way-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/>
+                </svg>
+              </div>
+              <h3>Thoughtful Itineraries</h3>
+              <p>Designed around moments, not milestones.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 07 · STORIES FROM THE ROAD ============ -->
+      <section class="bp-stories" aria-labelledby="bp-stories-title">
+        <div class="bp-container">
+          <header class="bp-section-head reveal">
+            <h2 class="section-title" id="bp-stories-title">Stories Worth Bringing Home</h2>
+          </header>
+          <div class="bp-quote-grid">
+            <blockquote class="bp-quote reveal" data-delay="100">
+              <p>I came for Spiti. I still remember the conversations.</p>
+              <span>— A Roamingoo traveller</span>
+            </blockquote>
+            <blockquote class="bp-quote reveal" data-delay="200">
+              <p>Started solo. Returned with people I still call.</p>
+              <span>— A Roamingoo traveller</span>
+            </blockquote>
+            <blockquote class="bp-quote reveal" data-delay="300">
+              <p>The road became the best part of the journey.</p>
+              <span>— A Roamingoo traveller</span>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 08 · RESPONSIBLE TRAVEL STRIP ============ -->
+      <section class="rules-strip" aria-labelledby="bp-rules-title">
+        <div class="rules-inner reveal">
+          <header class="rules-head">
+            <h2 class="rules-title" id="bp-rules-title">Travel Rules We Believe In</h2>
+            <p class="rules-sub">Small actions. Better journeys.</p>
+          </header>
+
+          <ul class="rules-list">
+            <li>
+              <span class="rule-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M12 3l3 6 6 1-4.5 4 1 6L12 17l-5.5 3 1-6L3 10l6-1z" />
+                </svg>
+              </span>
+              <h3>Travel with respect</h3>
+            </li>
+            <li>
+              <span class="rule-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M6 4h12l-1 16H7z" /><path d="M9 4V2h6v2" /><path d="M10 9v8M14 9v8" />
+                </svg>
+              </span>
+              <h3>Leave no litter</h3>
+            </li>
+            <li>
+              <span class="rule-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <circle cx="9" cy="9" r="3" /><circle cx="17" cy="10" r="2.4" />
+                  <path d="M3 20c.6-3 3-5 6-5s5.4 2 6 5" /><path d="M14 20c.4-2 2-3.4 4-4" />
+                </svg>
+              </span>
+              <h3>Support local communities</h3>
+            </li>
+            <li>
+              <span class="rule-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M5 20c3-6 8-12 14-13" /><path d="M5 20c0-6 4-10 10-11" />
+                </svg>
+              </span>
+              <h3>Protect nature</h3>
+            </li>
+            <li>
+              <span class="rule-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                  <path d="M4 7h16v12H4z" /><path d="M8 7V5h8v2" /><path d="M9 12l2 2 4-4" />
+                </svg>
+              </span>
+              <h3>Take memories, not damage</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ 09 · PLAN WITH A HUMAN CTA ============ -->
+      <section class="bp-plan" aria-labelledby="bp-plan-title">
+        <div
+          class="bp-plan-bg"
+          style="background-image: url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?auto=format&fit=crop&w=1920&q=80');"
+        ></div>
+        <div class="bp-plan-overlay"></div>
+        <div class="bp-plan-inner reveal">
+          <h2 id="bp-plan-title">Plan Your Journey With A Real Human.</h2>
+          <p>
+            Tell us how you like to travel. Solo or with friends. Mountains,
+            rivers or culture. Fast or slow. We will help you find the road that
+            feels right.
+          </p>
+          <div class="bp-plan-ctas">
+            <a href="booking.html" class="btn btn-primary">Start Planning</a>
+            <a href="https://wa.me/919999999999" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ 10 · EXPLORE OTHER COLLECTIONS ============ -->
+      <section class="bp-collections" aria-labelledby="bp-coll-title">
+        <div class="bp-container">
+          <header class="bp-section-head reveal">
+            <h2 class="section-title" id="bp-coll-title">Every Road Leads Somewhere Different</h2>
+          </header>
+          <div class="bp-coll-grid">
+            <a href="backpacking.html" class="bp-coll-card reveal" data-delay="100"
+               style="background-image: url('assets/images/Blog%20%20News%20Banners%20%20%20(7)_20250527T090622423Z.png');">
+              <h3>Backpacking Trails<span class="bp-coll-go">Explore →</span></h3>
+            </a>
+            <a href="destination-uttarakhand.html" class="bp-coll-card reveal" data-delay="200"
+               style="background-image: url('assets/images/20250328836639373.jpg.jpeg');">
+              <h3>Digital Detox Retreats<span class="bp-coll-go">Explore →</span></h3>
+            </a>
+            <a href="destination-banaras.html" class="bp-coll-card reveal" data-delay="300"
+               style="background-image: url('assets/images/kashi-varanasi.png');">
+              <h3>Culture &amp; Soul Journeys<span class="bp-coll-go">Explore →</span></h3>
+            </a>
+            <a href="destination-uttarakhand.html" class="bp-coll-card reveal" data-delay="400"
+               style="background-image: url('assets/images/laxman%20jhula-rishikesh-uttrakhand-hero.jpg.jpeg');">
+              <h3>Weekend Adventures<span class="bp-coll-go">Explore →</span></h3>
+            </a>
+            <a href="destination-goa.html" class="bp-coll-card reveal" data-delay="500"
+               style="background-image: url('assets/images/606152253.jpg.jpeg');">
+              <h3>Coastal Social Escapes<span class="bp-coll-go">Explore →</span></h3>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="f-col f-brand">
+          <a href="index.html" class="logo footer-logo" aria-label="Roamingoo home">
+            <span class="logo-word">Roamingoo</span>
+          </a>
+          <p>
+            Roamingoo creates thoughtful journeys for people who want to travel
+            with curiosity, connect with others, and leave every place a little
+            better than they found it.
+          </p>
+          <p class="footer-tag"><em>Leave only stories.</em></p>
+          <div class="socials">
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" /></svg></a>
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h-3a4 4 0 0 0-4 4v3H5v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+            <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 5.8a8.5 8.5 0 0 1-2.4.7 4.1 4.1 0 0 0 1.8-2.3 8.4 8.4 0 0 1-2.6 1 4.1 4.1 0 0 0-7 3.8A11.7 11.7 0 0 1 3 4.6a4.1 4.1 0 0 0 1.3 5.5 4 4 0 0 1-1.9-.5 4.1 4.1 0 0 0 3.3 4 4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.3 8.3 0 0 1 2 18.3a11.7 11.7 0 0 0 6.3 1.8c7.6 0 11.7-6.3 11.7-11.7v-.5A8.3 8.3 0 0 0 22 5.8z" /></svg></a>
+          </div>
+        </div>
+
+        <div class="f-col">
+          <h5>Journeys</h5>
+          <a href="destination.html">Spiti Valley</a>
+          <a href="destination.html">Manali</a>
+          <a href="destination.html">Kasol</a>
+          <a href="destination-goa.html">Goa</a>
+          <a href="destination-banaras.html">Varanasi</a>
+          <a href="destination-uttarakhand.html">Mussoorie</a>
+        </div>
+
+        <div class="f-col">
+          <h5>Explore</h5>
+          <a href="index.html#journeys">All Journeys</a>
+          <a href="index.html#why">How We Travel</a>
+          <a href="index.html#story">Our Story</a>
+          <a href="booking.html">Plan With Us</a>
+        </div>
+
+        <div class="f-col">
+          <h5>Contact</h5>
+          <a href="mailto:hello@roamingoo.com">hello@roamingoo.com</a>
+          <a href="tel:+919999999999">+91 99999 99999</a>
+          <p>14 Heritage Lane,<br />New Delhi, India</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Roamingoo. All rights reserved.</span>
+        <span>Terms · Privacy · Cookies</span>
+      </div>
+    </footer>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+      <a href="index.html#journeys" class="m-link">Journeys</a>
+      <a href="index.html#why" class="m-link">How We Travel</a>
+      <a href="index.html#story" class="m-link">Stories</a>
+      <a href="booking.html" class="m-link">Plan With Us</a>
+      <a href="contact.html" class="m-link">Contact</a>
+      <a href="booking.html" class="btn btn-primary m-cta">Find Your Journey</a>
+    </div>
+
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
